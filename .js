@@ -1,12 +1,10 @@
 function palindrome(str) {
     let arr = str.toLowerCase().split("");
- 
     arr = arr.filter(x => /[a-zA-Z0-9]/.test(x));
     let count = 0;
     for(let i = 0; i <= (arr.length - i - 1); i++){
         if(arr[i] == arr[arr.length - i - 1]){
           count++;
-           // return true; 
         }                   
     }
     if(count == arr.length/2 || count == (arr.length + 1)/2 ){
@@ -15,4 +13,4 @@ function palindrome(str) {
       return false;
     }  
 }
-palindrome("eye");
+palindrome("eye"); // return true;
