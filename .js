@@ -1,3 +1,5 @@
+/************   Solution #1    **************************************************************************************/
+
 function palindrome(str) {
     let arr = str.toLowerCase().split("");
     arr = arr.filter(x => /[a-zA-Z0-9]/.test(x));
@@ -14,3 +16,23 @@ function palindrome(str) {
     }  
 }
 palindrome("eye"); // return true;
+
+
+/************   Solution #2    **************************************************************************************/
+
+function palindrome(str) {
+      let strLowerCase = str.replace(/[\W_]/g, '').toLowerCase();
+      let reversedStrLowerCase = str.replace(/[\W_]/g, '').toLowerCase().split('').reverse().join('');
+      return strLowerCase === reversedStrLowerCase;
+}
+
+
+
+
+
+
+
+
+
+
+// Retrieved from https://guide.freecodecamp.org/certifications/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/palindrome-checker/
