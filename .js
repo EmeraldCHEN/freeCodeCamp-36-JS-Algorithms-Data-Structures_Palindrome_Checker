@@ -20,13 +20,15 @@ palindrome("eye"); // return true;
 
 /************   Solution #2    **************************************************************************************/
 
-function palindrome(str) {
-      let strLowerCase = str.replace(/[\W_]/g, '').toLowerCase();
-      let reversedStrLowerCase = str.replace(/[\W_]/g, '').toLowerCase().split('').reverse().join('');
-      return strLowerCase === reversedStrLowerCase;
+function palindrome2(str) {
+    
+    let strLowerCase = str.replace(/[\W_]/g, '').toLowerCase(); // Uses regular expressions to replace any white space or non-alphanumeric characters with nothing (or null), 
+                                                                // which essentially removes them from the string
+                                                                // then chains .toLowerCase() to remove any capital letters
+    let reversedStrLowerCase = strLowerCase.split('').reverse().join(''); 
+    
+    return strLowerCase === reversedStrLowerCase; // Checks if the string is the same forwards and backwards
 }
-
-
 
 
 
