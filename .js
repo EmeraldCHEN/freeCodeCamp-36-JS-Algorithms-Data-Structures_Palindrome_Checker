@@ -78,9 +78,9 @@ function palindrome4(str) {
 // This solution performs better than others as it never needs to read through the whole string 
 // to know that it’s not a palindrome. It's much faster as it just makes it by looking at two letters.
 
-console.log(palindrome('A man, a plan, a canal. Panama')); // true
-console.log(palindrome('_EYE')); // true
-console.log(palindrome("almostomla")); // false
+console.log(palindrome4('A man, a plan, a canal. Panama')); // true
+console.log(palindrome4('_EYE')); // true
+console.log(palindrome4("almostomla")); // false
 
 
 
