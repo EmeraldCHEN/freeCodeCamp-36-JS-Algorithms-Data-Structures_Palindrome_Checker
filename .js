@@ -50,6 +50,41 @@ function palindrome3(str) {
 
 
 
+/************   Solution #4    **************************************************************************************/
+
+function palindrome4(str) {
+    // Assign a front pointer which is the index starting from the beginning of the string
+    // and a back pointer  starting  at the end of the string
+    let front = 0; 
+    let back = str.length - 1;
+    while(back > front){
+        if(str[front].match(/[\W_]/)){ // If str[front] is a number or letter -> null-> false, 
+            front++;   // otherwise it's true -> front++ and skip the rest of code inside the while loop
+            continue;  // then continue the while loop                                         
+        }
+        if(str[back].match(/[\W_]/)){ 
+            back--; // Decrements back pointer if current character doesn't meet criteria
+            continue;
+        }     
+        if (str[front].toLowerCase() !== str[back].toLowerCase()){
+            return false;
+        }
+        front++;
+        back--;
+    }
+    // If the whole string has been compared without returning false, it's a palindrome!
+    return true;
+}
+// This solution performs better than others as it never needs to read through the whole string 
+// to know that it’s not a palindrome. It's much faster as it just makes it by looking at two letters.
+
+console.log(palindrome('A man, a plan, a canal. Panama')); // true
+console.log(palindrome('_EYE')); // true
+console.log(palindrome("almostomla")); // false
+
+
+
+
 
 
 // Retrieved from https://guide.freecodecamp.org/certifications/javascript-algorithms-and-data-structures/javascript-algorithms-and-data-structures-projects/palindrome-checker/
