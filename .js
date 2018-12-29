@@ -1,3 +1,4 @@
+
 /************   Solution #1    **************************************************************************************/
 
 function palindrome(str) {
@@ -18,6 +19,7 @@ function palindrome(str) {
 palindrome("eye"); // return true;
 
 
+
 /************   Solution #2    **************************************************************************************/
 
 function palindrome2(str) {
@@ -32,6 +34,19 @@ function palindrome2(str) {
 
 
 
+/************   Solution #3    **************************************************************************************/
+
+function palindrome3(str) {
+  
+  str = str.toLowerCase().replace(/[\W_]/g, "");
+  let len = str.length - 1;
+  for(let i = 0; i < len/2; i++){ // Sets i is greater than the length of the string divided by two, which tells the loop to stop after the halfway point of the string
+    if(str[i] !== str[len-i]){
+      return false;
+    }
+  }
+  return true;
+}
 
 
 
